@@ -1,0 +1,102 @@
+import 'package:flutter/material.dart';
+
+class ThemeDesign {
+  /* Padding */
+  static double containerPadding = 10;
+
+  static EdgeInsets containerPaddingLeftRight = EdgeInsets.fromLTRB(containerPadding, 0, containerPadding, 0);
+
+  static EdgeInsets containerPaddingAll = EdgeInsets.all(containerPadding);
+
+  static EdgeInsets containerPaddingTopBottom = EdgeInsets.fromLTRB(0, containerPadding, 0, containerPadding);
+
+  static EdgeInsets containerPaddingTopLeftRight =
+      EdgeInsets.fromLTRB(containerPadding, containerPadding, containerPadding, 0);
+
+  static EdgeInsets containerPaddingLeftRightBottom = EdgeInsets.fromLTRB(10, 0, containerPadding, containerPadding);
+
+  static double buttonPadding = 20;
+
+  /* App colour */
+  static Color appPrimaryColor = Colors.cyan;
+
+  static Color appPrimaryColor100 = Colors.cyan[50];
+
+  static Color appPrimaryColor300 = Colors.cyan[200];
+
+  static Color appPrimaryColor900 = Colors.cyan[900];
+
+  /*  Button colour * size */
+  static Color buttonPrimaryColor = appPrimaryColor;
+
+  static Color buttonTextPrimaryColor = Colors.white;
+
+  static Color buttonSecondaryColor = Colors.white;
+
+  static Color buttonTextSecondaryColor = Colors.black;
+
+  static double buttonFontSize = descriptionFontSize;
+
+  /* Font size & colour */
+  static double titleFontSize = 20;
+
+  static double descriptionFontSize = 16;
+
+  static TextStyle titleStyle = TextStyle(
+    fontWeight: FontWeight.bold,
+    fontSize: titleFontSize,
+  );
+
+  static TextStyle titleStyleWithColourLarge = TextStyle(
+    fontSize: ThemeDesign.titleFontSize,
+    color: ThemeDesign.appPrimaryColor900,
+    fontWeight: FontWeight.bold,
+  );
+
+  static TextStyle titleStyleWithColourRegular = TextStyle(
+    fontSize: ThemeDesign.descriptionFontSize,
+    color: ThemeDesign.appPrimaryColor900,
+    fontWeight: FontWeight.bold,
+  );
+
+  static TextStyle descriptionStyle = TextStyle(
+    fontSize: descriptionFontSize,
+  );
+
+  static TextStyle emptyStyle = TextStyle(
+    fontStyle: FontStyle.italic,
+    fontSize: descriptionFontSize,
+    color: Colors.grey,
+  );
+
+  static TextStyle errorStyle = TextStyle(
+    fontSize: descriptionFontSize,
+  );
+
+  static TextStyle asteriskStyle = TextStyle(
+    fontSize: descriptionFontSize,
+    color: Colors.red,
+  );
+
+  /* Default Image */
+  static const String defaultImage =
+      "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";
+
+  /* DropDownButton */
+  static double dropDownButtonIconSize = 40;
+
+  /* Card */
+  static double cardBorderWidth = 2;
+
+  static double cardCornerRadius = 15;
+
+  static RoundedRectangleBorder cardBorderStyle = RoundedRectangleBorder(
+    side: BorderSide(color: ThemeDesign.appPrimaryColor900, width: cardBorderWidth),
+    borderRadius: BorderRadius.circular(cardCornerRadius),
+  );
+
+  /* Voucher List Image */
+  static double voucherImageHeightRatio = 0.35;
+
+  static double voucherImageWidthRatio = 0.35;
+}
